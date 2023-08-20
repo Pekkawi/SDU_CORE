@@ -1,22 +1,27 @@
-import { OrganizationSwitcher, SignedIn, SignOutButton } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
+"use client";
+
+import { SignedIn, SignOutButton } from "@clerk/nextjs";
+("use client");
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Topbar() {
+  const router = useRouter();
+
   return (
     <nav className="topbar">
       <Link href="/" className="flex items-center gap-4">
-        <Image src="/logo.svg" alt="logo" width={28} height={28} />
-        <p className="text-heading3-bold text-dark-1 max-xs:hidden">
+        <p className="font-normal text-xl text-dark-1 max-xs:hidden">
           SDU - THE CORE
         </p>
       </Link>
 
       <div className="flex items-center gap-1">
-        <div className="block md:hidden">
+        <div className="block ">
           <SignedIn>
-            <SignOutButton>
+            <SignOutButton signOutCallback={() => router.push("/sign-in")}>
               <div className="flex cursor-pointer">
                 <Image
                   src="/assets/logout.svg"
@@ -28,15 +33,6 @@ function Topbar() {
             </SignOutButton>
           </SignedIn>
         </div>
-
-        <OrganizationSwitcher
-          appearance={{
-            baseTheme: dark,
-            elements: {
-              organizationSwitcherTrigger: "py-2 px-4",
-            },
-          }}
-        />
       </div>
     </nav>
   );
