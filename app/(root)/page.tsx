@@ -1,9 +1,10 @@
-import { SignInButton } from "@clerk/nextjs";
+//app/page.tsx
+"use server";
 
-export default function Home() {
-  return (
-    <main>
-      <SignInButton />
-    </main>
-  );
+import { currentUser } from "@clerk/nextjs";
+
+export default async function Home() {
+  const user = await currentUser();
+
+  return <main></main>;
 }
