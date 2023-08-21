@@ -1,10 +1,7 @@
 //app/page.tsx
-"use server";
 
-import { currentUser } from "@clerk/nextjs";
+import MainCard from "@/components/cards/MainCard";
 
 export default async function Home() {
-  const user = await currentUser();
-
   return <main></main>;
 }
