@@ -13,7 +13,7 @@ const LeftSidebar = () => {
   const { userId } = useAuth();
 
   return (
-    <section className="leftsidebar">
+    <section className="leftsidebar custom-scrollbar">
       <div className="flex w-full flex-1 flex-col ">
         {sidebarLinks.map((link) => {
           const isActive =

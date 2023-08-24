@@ -1,7 +1,5 @@
-//app/page.tsx
+const Page = () => {
+  return <div></div>;
+};
 
-import MainCard from "@/components/cards/MainCard";
-
-export default async function Home() {
-  return <main></main>;
-}
+export default Page;
