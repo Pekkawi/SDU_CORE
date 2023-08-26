@@ -5,8 +5,8 @@ const Page = () => {
   return (
     <div className="card">
       <TitleDescription
-        header="Nodes"
-        description="Connected nodes for machine control"
+        header="Feature request or bug report"
+        description="Tell us how we can improve the software"
       />
     </div>
   );
